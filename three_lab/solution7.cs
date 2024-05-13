@@ -1,11 +1,20 @@
-int sum = 0;
+using System;
 
-for (int i = -99; i <= 99; i++)
+class Program
 {
-    if (i % 2 != 0 && i < 0)
+    static void Main(string[] args)
     {
-        sum += Math.Abs(i);
+        int sum = 0;
+
+        for (int i = -99; i <= 99; i++)
+        {
+            if (i < 0 && i % 2 != 0)
+            {
+                sum += Math.Abs(i);
+            }
+        }
+
+        Console.WriteLine($"Сумма модулей всех нечетных, отрицательных чисел от -99 до 99: {sum}");
+        Console.ReadLine();
     }
 }
-
-Console.WriteLine($"Сумма модулей всех нечетных, отрицательных чисел от -99 до 99: {sum}");
